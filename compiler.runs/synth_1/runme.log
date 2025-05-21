@@ -1,0 +1,280 @@
+
+*** Running vivado
+    with args -log Unite_de_controle.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Unite_de_controle.tcl
+
+
+****** Vivado v2023.1 (64-bit)
+  **** SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+  **** IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+  **** SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source Unite_de_controle.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1335.879 ; gain = 0.023 ; free physical = 11209 ; free virtual = 12782
+Command: read_checkpoint -auto_incremental -incremental /home/jgarci/Documents/compiler/compiler.srcs/utils_1/imports/synth_1/UAL.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/jgarci/Documents/compiler/compiler.srcs/utils_1/imports/synth_1/UAL.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top Unite_de_controle -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5151
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1698.680 ; gain = 362.801 ; free physical = 10512 ; free virtual = 12090
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Unite_de_controle' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:34]
+INFO: [Synth 8-3491] module 'Memoire_des_instructions' declared at '/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Memoire_des_instructions.vhd:5' bound to instance 'instr_memory' of component 'memoire_des_instructions' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:129]
+INFO: [Synth 8-638] synthesizing module 'Memoire_des_instructions' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Memoire_des_instructions.vhd:11]
+INFO: [Synth 8-256] done synthesizing module 'Memoire_des_instructions' (0#1) [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Memoire_des_instructions.vhd:11]
+INFO: [Synth 8-3491] module 'memoire_des_donnes' declared at '/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/memoire_des_donnes.vhd:5' bound to instance 'data_memory' of component 'memoire_des_donnes' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'memoire_des_donnes' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/memoire_des_donnes.vhd:14]
+INFO: [Synth 8-256] done synthesizing module 'memoire_des_donnes' (0#1) [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/memoire_des_donnes.vhd:14]
+INFO: [Synth 8-3491] module 'banc_de_registres' declared at '/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd:5' bound to instance 'register_bank' of component 'banc_de_registres' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:146]
+INFO: [Synth 8-638] synthesizing module 'banc_de_registres' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd:17]
+INFO: [Synth 8-256] done synthesizing module 'banc_de_registres' (0#1) [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd:17]
+INFO: [Synth 8-3491] module 'UAL' declared at '/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd:5' bound to instance 'ALU' of component 'UAL' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'UAL' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd:18]
+WARNING: [Synth 8-614] signal 'result' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'UAL' (0#1) [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd:18]
+WARNING: [Synth 8-614] signal 'DI_opcode' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'DI_op2' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'REG_Q_A' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'EX_opcode' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'EX_op2' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'S_ALU' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'ME_opcode' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'out_o_mem' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'ME_op2' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'ME_op1' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'INSTR_MEM_OUT' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'DI_op3' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'REG_Q_B' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'REG_DAT' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'REG_W' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+WARNING: [Synth 8-614] signal 'REG_WRITE' is read in the process but is not in the sensitivity list [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:172]
+INFO: [Synth 8-256] done synthesizing module 'Unite_de_controle' (0#1) [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:34]
+WARNING: [Synth 8-6014] Unused sequential element qb_reg was removed.  [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd:32]
+WARNING: [Synth 8-3936] Found unconnected internal register 'DI_op3_reg' and it is trimmed from '8' to '4' bits. [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:149]
+WARNING: [Synth 8-3848] Net REG_RST in module/entity Unite_de_controle does not have driver. [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:98]
+WARNING: [Synth 8-3848] Net a_mem in module/entity Unite_de_controle does not have driver. [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:79]
+WARNING: [Synth 8-3848] Net rst_mem in module/entity Unite_de_controle does not have driver. [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd:82]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1766.648 ; gain = 430.770 ; free physical = 10416 ; free virtual = 11997
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1784.461 ; gain = 448.582 ; free physical = 10419 ; free virtual = 11999
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1792.465 ; gain = 456.586 ; free physical = 10419 ; free virtual = 11999
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'N_reg' [/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd:40]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1800.473 ; gain = 464.594 ; free physical = 10393 ; free virtual = 11976
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   16 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 2     
+	                8 Bit    Registers := 27    
+	                4 Bit    Registers := 2     
++---RAMs : 
+	               2K Bit	(256 X 8 bit)          RAMs := 1     
++---Muxes : 
+	 257 Input   32 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 53    
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 52    
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3332] Sequential element (ALU/N_reg) is unused and will be removed from module Unite_de_controle.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10204 ; free virtual = 11817
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name       | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Unite_de_controle | data_memory/memory_reg | 256 x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10188 ; free virtual = 11802
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name       | RTL Object             | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Unite_de_controle | data_memory/memory_reg | 256 x 8(NO_CHANGE)     | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------------+------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance data_memory/memory_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10188 ; free virtual = 11802
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |    31|
+|3     |LUT1     |     2|
+|4     |LUT2     |    55|
+|5     |LUT3     |    66|
+|6     |LUT4     |    25|
+|7     |LUT5     |    30|
+|8     |LUT6     |    87|
+|9     |MUXF7    |    16|
+|10    |RAMB18E1 |     1|
+|11    |FDRE     |   212|
+|12    |IBUF     |    34|
+|13    |OBUF     |   117|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------+-------------------+------+
+|      |Instance        |Module             |Cells |
++------+----------------+-------------------+------+
+|1     |top             |                   |   678|
+|2     |  ALU           |UAL                |    23|
+|3     |  data_memory   |memoire_des_donnes |     4|
+|4     |  register_bank |banc_de_registres  |   421|
++------+----------------+-------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.863 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1950.871 ; gain = 614.984 ; free physical = 10189 ; free virtual = 11803
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1956.801 ; gain = 0.000 ; free physical = 10448 ; free virtual = 12065
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2057.570 ; gain = 0.000 ; free physical = 10396 ; free virtual = 12026
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 8ae5b946
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:26 . Memory (MB): peak = 2057.570 ; gain = 721.691 ; free physical = 10396 ; free virtual = 12026
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1503.496; main = 1262.638; forked = 362.815
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 2895.797; main = 2057.574; forked = 977.945
+INFO: [Common 17-1381] The checkpoint '/home/jgarci/Documents/compiler/compiler.runs/synth_1/Unite_de_controle.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file Unite_de_controle_utilization_synth.rpt -pb Unite_de_controle_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 21 16:56:09 2025...

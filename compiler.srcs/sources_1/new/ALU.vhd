@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity UAL is
+entity ALU is
     Port ( 
         A : in STD_LOGIC_VECTOR(7 downto 0);
         B : in STD_LOGIC_VECTOR(7 downto 0);
@@ -13,9 +13,9 @@ entity UAL is
         Z : out STD_LOGIC; 
         C : out STD_LOGIC 
     );
-end UAL;
+end ALU;
 
-architecture Behavioral of UAL is
+architecture Behavioral of ALU is
     signal result : unsigned(7 downto 0);
     signal a_unsigned : unsigned(7 downto 0);
     signal b_unsigned : unsigned(7 downto 0);
@@ -28,49 +28,50 @@ begin
     variable sum : unsigned(15 downto 0);
 begin
     case Ctrl_Alu is
-        when "000" => -- Addition
+        when "001" => -- Addition
             sum := ("00000000" & a_unsigned) + ("00000000" & b_unsigned);
-            result <= sum(7 downto 0) ; 
             C <= sum(8);
             
-        when "001" => -- Subtraction
+        when "011" => -- Subtraction
             sum := ("00000000" & a_unsigned) - ("00000000" & b_unsigned);
             result <= sum(7 downto 0) ; 
-            C <= '0';
-            N <= sum(15); -- Negative result
+            C <= '0'; 
+                                    
         when "010" => -- Multiplication
             sum := (a_unsigned * b_unsigned);
-            result <= sum(7 downto 0);
             C <= '0';
         
-        when "011" => -- Division
+        when "100" => -- Division
             if b_unsigned /= 0 then -- Check division by zero
                 sum := ("00000000" & a_unsigned) / ("00000000" & b_unsigned);
             else
                 sum := (others => '0');
             end if;
-            result <= sum(7 downto 0);
             C <= '0';
         
         when others =>
-            result <= (others => '0');
+            sum := "0000000000000000" ;
             C <= '0';
     end case;
 
     -- Flags
 
-    if result > x"00FF" then
+    if sum > x"00FF" then
         O <= '1'; -- Overflow
     else
         O <= '0';
-    end if;
+    end if; 
 
-    if result = 0 then
+    if sum = 0 then
         Z <= '1'; -- Zero result
     else
         Z <= '0';
-    end if;
+    end if;   
+                                                                                                                                                                                                          
+    N <= sum(15); -- Negative result?
+    
+    S <= std_logic_vector(sum(7 downto 0));
 end process;
-    S <= std_logic_vector(result);
+    --S <= std_logic_vector(result);
 
 end Behavioral;

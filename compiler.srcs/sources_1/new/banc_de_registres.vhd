@@ -15,7 +15,6 @@ entity banc_de_registres is
 end banc_de_registres;
 
 architecture Behavioral of banc_de_registres is
-    
     type reg_array is array (0 to 15) of std_logic_vector(7 downto 0);
     signal Regs: reg_array := (others =>(others => '0'));
     
@@ -26,17 +25,23 @@ begin
     if rising_edge(clock) then
         if reset = '0' then
             Regs <= (others =>(others => '0'));
-        end if; 
-        if a_a = a_w OR a_b = a_w then 
-            qa <= data;
-            qb <= data;
-        else
+        else 
+            if w = '1' and a_a = a_w  then 
+                qa <= data;
+            else
+                qa <= Regs(to_integer(unsigned(a_a)));
+            end if;
+            
+            if w = '1' and a_b = a_w then
+                qb <= data;  
+            else
+                qb <= Regs(to_integer(unsigned(a_b))); 
+            end if; 
+   
             if w = '1' then
                 Regs(to_integer(unsigned(a_w))) <= data;
             end if;
-            qa <= Regs(to_integer(unsigned(a_w)));
-            qb <= Regs(to_integer(unsigned(a_w))); 
-        end if;   
+        end if; 
     end if;     
     end process;
 

@@ -3,12 +3,12 @@
 # SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Wed May 21 16:55:26 2025
-# Process ID: 5108
+# Start of session at: Mon May 26 18:12:33 2025
+# Process ID: 72053
 # Current directory: /home/jgarci/Documents/compiler/compiler.runs/synth_1
 # Command line: vivado -log Unite_de_controle.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Unite_de_controle.tcl
 # Log file: /home/jgarci/Documents/compiler/compiler.runs/synth_1/Unite_de_controle.vds
 # Journal file: /home/jgarci/Documents/compiler/compiler.runs/synth_1/vivado.jou
-# Running On: insa-20671, OS: Linux, CPU Frequency: 4306.789 MHz, CPU Physical cores: 6, Host memory: 16540 MB
+# Running On: insa-20663, OS: Linux, CPU Frequency: 2400.032 MHz, CPU Physical cores: 6, Host memory: 16540 MB
 #-----------------------------------------------------------
 source Unite_de_controle.tcl -notrace

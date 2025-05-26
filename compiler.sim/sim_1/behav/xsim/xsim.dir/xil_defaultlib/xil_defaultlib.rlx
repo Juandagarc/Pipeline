@@ -2,13 +2,13 @@
 2020.2
 May  7 2023
 15:10:42
-/home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/TB_ALU.vhd,1745842052,vhdl,,,,tb_ual,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/TB_ALU.vhd,1748263316,vhdl,,,,tb_alu,,,,,,,,
 /home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/tb_banc_de_registres.vhd,1747237669,vhdl,,,,tb_banc_de_registres,,,,,,,,
 /home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/tb_memoire_des_donnes.vhd,1747674707,vhdl,,,,tb_memoire_des_donnes,,,,,,,,
 /home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/tb_memoire_des_instructions.vhd,1747677760,vhdl,,,,tb_memoire_des_instructions,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/tb_unite_de_controle.vhd,1747783369,vhdl,,,,tb_unite_de_controle,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd,1747774008,vhdl,,,,ual,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Memoire_des_instructions.vhd,1747671199,vhdl,,,,memoire_des_instructions,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd,1747839293,vhdl,,,,unite_de_controle,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd,1747757211,vhdl,,,,banc_de_registres,,,,,,,,
-/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/memoire_des_donnes.vhd,1747674465,vhdl,,,,memoire_des_donnes,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sim_1/new/tb_unite_de_controle.vhd,1748276522,vhdl,,,,tb_unite_de_controle,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/ALU.vhd,1748269162,vhdl,,,,alu,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Memoire_des_instructions.vhd,1748274848,vhdl,,,,memoire_des_instructions,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/Unite_de_controle.vhd,1748276031,vhdl,,,,unite_de_controle,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/banc_de_registres.vhd,1748272442,vhdl,,,,banc_de_registres,,,,,,,,
+/home/jgarci/Documents/compiler/compiler.srcs/sources_1/new/memoire_des_donnes.vhd,1748274604,vhdl,,,,memoire_des_donnes,,,,,,,,

@@ -15,7 +15,7 @@ Compiling package ieee.numeric_std
 Compiling architecture behavioral of entity xil_defaultlib.Memoire_des_instructions [memoire_des_instructions_default]
 Compiling architecture behavioral of entity xil_defaultlib.memoire_des_donnes [memoire_des_donnes_default]
 Compiling architecture behavioral of entity xil_defaultlib.banc_de_registres [banc_de_registres_default]
-Compiling architecture behavioral of entity xil_defaultlib.UAL [ual_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
 Compiling architecture behavioral of entity xil_defaultlib.Unite_de_controle [unite_de_controle_default]
 Compiling architecture behavioral of entity xil_defaultlib.tb_unite_de_controle
 Built simulation snapshot tb_unite_de_controle_behav

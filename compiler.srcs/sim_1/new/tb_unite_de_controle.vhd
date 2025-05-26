@@ -111,16 +111,16 @@ begin
     process
     begin
     wait for 20ns;
-    curr_instr <= "00000110000000110101010100000000"; --sto 3 val 
+    curr_instr <= "00000110000000110101010100000000"; --sto in reg 3 val 55 = 6 3 55 0
     wait for 100ns;
     
-    curr_instr <= "00000110000001000000111100000000"; --sto 4 val 
+    curr_instr <= "00000110000001000000111100000000"; --sto in reg 4 val  = 6 4 val 0
     wait for 100ns;
     
-    curr_instr <= "00000101000001010000010000000000"; --mov 5 val 
+    curr_instr <= "00000101000001010000010000000000"; --mov val in reg 4 to 5
     wait for 100ns;
     
-    curr_instr <= "00000001000001110000010000000110"; --add 5 7 4 
+    curr_instr <= "00000001000001110000010000000011"; --add 7 5 3 = 1 7 5 3
     wait for 100ns;
     
     end process;

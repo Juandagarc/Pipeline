@@ -2,12 +2,12 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
-entity tb_UAL is
-end tb_UAL;
+entity tb_ALU is
+end tb_ALU;
 
-architecture Behavioral of tb_UAL is
+architecture Behavioral of tb_ALU is
 
-    component UAL
+    component ALU
         Port ( 
             A : in STD_LOGIC_VECTOR(7 downto 0);
             B : in STD_LOGIC_VECTOR(7 downto 0);
@@ -28,7 +28,7 @@ architecture Behavioral of tb_UAL is
 
 begin
 
-    uut: UAL
+    uut: ALU
         Port map (
             A => A_tb,
             B => B_tb,
@@ -41,32 +41,62 @@ begin
         );
     process
     begin
-
+        
+        --001 = add
+        -- first: basic add
         A_tb <= "00000001"; 
         B_tb <= "00000011"; 
-        Ctrl_Alu_tb <= "00"; 
+        Ctrl_Alu_tb <= "001"; 
+        wait for 10 ns;
+        
+        -- then: add with overflow/carry
+        A_tb <= "00000001"; 
+        B_tb <= "11111111"; 
+        Ctrl_Alu_tb <= "001"; 
         wait for 10 ns;
 
-
+        --011 = sub
+        -- normal sub
+        A_tb <= "00001000";
+        B_tb <= "00000111"; 
+        Ctrl_Alu_tb <= "011";
+        wait for 10 ns;
+        
+        -- sub with negative result
+        A_tb <= "00000111";
+        B_tb <= "00001000"; 
+        Ctrl_Alu_tb <= "011";
+        wait for 10 ns;
+        
+        -- sub with zero result
         A_tb <= "00000101";
-        B_tb <= "00000011"; 
-        Ctrl_Alu_tb <= "01";
+        B_tb <= "00000101"; 
+        Ctrl_Alu_tb <= "011";
         wait for 10 ns;
+        
 
+        --010 = mul
         A_tb <= "00000100"; 
-        B_tb <= "00000011"; 
-        Ctrl_Alu_tb <= "10"; 
+        B_tb <= "00000010"; 
+        Ctrl_Alu_tb <= "010"; 
         wait for 10 ns;
 
+        --mul with overflow
+        A_tb <= "01000001"; 
+        B_tb <= "00000110"; 
+        Ctrl_Alu_tb <= "010"; 
+        wait for 10 ns;
+        
+        --100 = div
         A_tb <= "00001000";
         B_tb <= "00000010";
-        Ctrl_Alu_tb <= "11";
+        Ctrl_Alu_tb <= "100";
         wait for 10 ns;
 
- 
+        --check div by 0
         A_tb <= "00001000";
         B_tb <= "00000000"; 
-        Ctrl_Alu_tb <= "11"; 
+        Ctrl_Alu_tb <= "100"; 
         wait for 10 ns;
 
         wait;

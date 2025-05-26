@@ -40,11 +40,37 @@ begin
     process
     begin
     
-    RST <= '1','0' after 10 ns;
-    in_i <= "10011111" after 30 ns;
-    A <= "11111111";
-    RW <= '0', '1' after 50 ns, '0' after 60 ns;
-    wait;
+    RST <= '0';
+    wait for 20 ns;
+    RST <= '1';
+    wait for 10 ns;
+    
+    --write to mem
+    RW <= '0';
+    A <= "00001111";
+    in_i <= "00011111";
+    wait for 20 ns;
+    A <= "00001110";
+    in_i <= "00011110";
+    wait for 20 ns;
+    A <= "00001101";
+    in_i <= "00011101";
+    wait for 20 ns;
+    
+    --read from mem
+    RW <= '1' ;
+    A <= "00001111";
+    wait for 20 ns;
+    A <= "00001110";
+    wait for 20 ns;
+    A <= "00001101";
+    wait for 20 ns;
+    
+    -- data doesn't change when rw is 1
+    A <= "00001000";
+    in_i <= "10011101";
+    wait for 20 ns;
+    
     end process;
 
 end Behavioral;

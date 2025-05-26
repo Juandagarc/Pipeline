@@ -54,13 +54,52 @@ begin
     process
     begin
     
-    RST <= '0','1' after 30 ns,'0' after 40 ns;
-    DAT <= "10101010", "00001111" after 30 ns;
-    A <= "1010", "0110" after 30 ns;
-    B <= "0001", "0011" after 30 ns;
-    W <= "0011", "0001" after 30 ns, "0011" after 50 ns, "0111" after 60 ns;
-    WRITE <= '1', '0' after 30 ns, '1' after 40 ns;
-    wait;
+    --reset: set reg values to zero
+    RST <= '0';
+    A <= "0000";
+    B <= "0000";
+    WRITE <= '0';
+    DAT <= "00000000";
+    W <= "0000";
+    wait for 30 ns;
+    RST <= '1';
+    
+    --write 10101010 to register 1 and  00001111 to 2
+    DAT <= "10101010";
+    WRITE <= '1';
+    W <= "0001";
+    wait for 10 ns;
+    DAT <= "00001111";
+    W <= "0010";
+    wait for 10 ns;
+    
+    --read register 1 (via A) and 2 (via B)
+    WRITE <= '0';
+    A <= "0001";
+    B <= "0010";
+    wait for 10 ns;
+    
+    --write 00001100 to register 3 and read 3 at the same time
+    WRITE <= '1';
+    DAT <= "00001100";
+    W <= "0011";
+    A <= "0011";
+    wait for 10 ns;
+    
+     --write 00001000 to register 4 and read 4 at the same time
+    WRITE <= '1';
+    DAT <= "00001000";
+    W <= "0100";
+    B <= "0100";
+    wait for 10 ns;
+    
+    --write to reg 1 with write set to 0: read should not have changed
+    WRITE <= '0';
+    W <= "0001";
+    wait for 10 ns;
+    A <= "0001";
+    wait for 100 ns;
+    
     end process;
 
 end Behavioral;

@@ -29,10 +29,14 @@ begin
             
     CLK <= not CLK after ClockPeriod / 2;
     
-     process
+    process
     begin
     A <= "10101010";
-    wait;
+    wait for 20 ns;
+    A <= "10101011";
+    wait for 20 ns;
+    A <= "10101100";
+    wait for 20 ns;
     end process;
 
 
